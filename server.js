@@ -2,9 +2,11 @@ const express = require("express");
 const axios = require("axios");
 const fs = require("fs");
 const { exec } = require("child_process");
+const cors = require("cors");
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 
 app.post("/convert", async (req, res) => {
